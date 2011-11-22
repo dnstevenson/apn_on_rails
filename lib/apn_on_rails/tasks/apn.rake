@@ -20,7 +20,6 @@ desc "Deliver all unsent APN notifications."
     task :deliver_filmapp_iphone => [:environment] do
       APN::Notification.send_notifications(APN::Notification.find(:all, :conditions => ["sent_at is  null and device_type = 'filmapp-iphone'"]))
     end
-end    
   end # notifications
   
   namespace :feedback do
